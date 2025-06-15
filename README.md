@@ -25,7 +25,7 @@ A beautiful and responsive digital wedding invitation website built using PHP, T
 
 1. Clone or download the project to your web server directory
    ```
-   git clone https://github.com/yourusername/wedding-invitation.git
+   git clone https://github.com/marsellinus/undangan_nikah.git
    ```
    Or simply extract the ZIP file to your web server directory
 
