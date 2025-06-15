@@ -1,0 +1,51 @@
+# Enable URL rewriting
+RewriteEngine On
+
+# Force HTTPS (uncomment in production)
+# RewriteCond %{HTTPS} off
+# RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
+# Redirect to www version (uncomment in production)
+# RewriteCond %{HTTP_HOST} ^example\.com [NC]
+# RewriteRule ^(.*)$ https://www.example.com/$1 [L,R=301]
+
+# Ensure php file extensions work
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule ^([^\.]+)$ $1.php [NC,L]
+
+# Security settings
+# Prevent directory listing
+Options -Indexes
+
+# Protect htaccess file
+<Files .htaccess>
+    Order allow,deny
+    Deny from all
+</Files>
+
+# Protect sensitive files
+<FilesMatch "(^#.*#|\.(bak|config|sql|fla|psd|ini|log|sh|inc|swp|dist)|~)$">
+    Order allow,deny
+    Deny from all
+    Satisfy All
+</FilesMatch>
+
+# Set default character set
+AddDefaultCharset UTF-8
+
+# Set caching for static assets
+<IfModule mod_expires.c>
+    ExpiresActive On
+    ExpiresByType image/jpg "access plus 1 year"
+    ExpiresByType image/jpeg "access plus 1 year"
+    ExpiresByType image/gif "access plus 1 year"
+    ExpiresByType image/png "access plus 1 year"
+    ExpiresByType text/css "access plus 1 month"
+    ExpiresByType application/javascript "access plus 1 month"
+    ExpiresByType audio/mpeg "access plus 1 month"
+</IfModule>
+
+# Enable GZIP compression
+<IfModule mod_deflate.c>
+    AddOutputFilterByType DEFLATE text/html text/plain text/xml text/css application/javascript application/json
+</IfModule>

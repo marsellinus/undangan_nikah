@@ -1,0 +1,10 @@
+/* 
+ * This is a placeholder for the compiled Tailwind CSS.
+ * For production, you should download the minified Tailwind CSS file from:
+ * https://github.com/tailwindlabs/tailwindcss/releases/latest/download/tailwind.min.css
+ * or generate it using the Tailwind CLI.
+ */
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;

@@ -1,0 +1,627 @@
+/* Simple Invitation Card Styles - Based on the image you provided */
+#invitation-card {
+    z-index: 9999;
+    font-family: 'Cormorant Garamond', serif;
+}
+
+.invitation-card-inner {
+    position: relative;
+    width: 100%;
+    max-width: 360px;
+    padding: 30px 20px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+    background: linear-gradient(to bottom, #ffffff, #f9f9f9);
+    border: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.date-badge {
+    position: relative;
+    font-size: 18px;
+    font-weight: 500;
+    background-color: #D9B54A;
+}
+
+.bg-gold {
+    background-color: #D9B54A;
+}
+
+.text-gold {
+    color: #D9B54A;
+}
+
+#invitation-card h1 {
+    line-height: 1.1;
+    margin: 20px 0;
+}
+
+#invitation-card a {
+    transition: all 0.3s ease;
+    font-weight: 500;
+    font-size: 18px;
+    margin-top: 30px;
+}
+
+#invitation-card a:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(217, 181, 74, 0.4);
+}
+
+/* Base font styles */
+.font-great-vibes {
+    font-family: 'Great Vibes', cursive;
+}
+.font-cormorant {
+    font-family: 'Cormorant Garamond', serif;
+}
+.font-montserrat {
+    font-family: 'Montserrat', sans-serif;
+}
+html {
+    scroll-behavior: smooth;
+}
+
+/* Color scheme */
+.text-gold {
+    color: #D4AF37;
+}
+.bg-gold {
+    background-color: #D4AF37;
+}
+.border-gold {
+    border-color: #D4AF37;
+}
+.bg-elegant-light {
+    background-color: #F9F7F5;
+}
+.bg-elegant-dark {
+    background-color: #2D2926;
+}
+
+/* Music player styling */
+.music-button {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 1000;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: rgba(212, 175, 55, 0.8);
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+    transition: all 0.3s;
+}
+.music-button:hover {
+    transform: scale(1.1);
+    background-color: rgba(212, 175, 55, 0.9);
+}
+.music-button.playing {
+    animation: pulse 2s infinite;
+}
+
+/* Enhanced Button Styling */
+.btn-elegant {
+    background: linear-gradient(135deg, #D4AF37, #E6C55C);
+    color: white !important;
+    border-radius: 30px;
+    padding: 12px 28px;
+    font-weight: 500;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    border: none;
+    box-shadow: 0 4px 10px rgba(212, 175, 55, 0.3);
+    display: inline-block;
+    text-align: center;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    line-height: 1.5;
+}
+.btn-elegant::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+    transition: 0.5s;
+}
+.btn-elegant:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 7px 14px rgba(212, 175, 55, 0.4);
+}
+.btn-elegant:hover::before {
+    left: 100%;
+}
+.btn-elegant:active {
+    transform: translateY(-1px);
+    box-shadow: 0 5px 10px rgba(212, 175, 55, 0.4);
+}
+.btn-elegant.btn-sm {
+    padding: 8px 18px;
+    font-size: 0.9rem;
+}
+.btn-elegant.btn-lg {
+    padding: 14px 32px;
+    font-size: 1.1rem;
+}
+.btn-elegant.btn-block {
+    display: block;
+    width: 100%;
+}
+
+/* Simple Elegant Envelope - Reset Styling */
+.envelope-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, #f8f6f3 0%, #f2efe9 100%);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+    overflow: hidden;
+    transition: all 0.8s ease;
+}
+
+.realistic-envelope {
+    position: relative;
+    width: 380px;
+    height: 220px;
+    max-width: 90%;
+    background-color: #f5f1ea;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    border-radius: 3px;
+    margin-bottom: 50px;
+    cursor: pointer;
+    overflow: hidden;
+    transition: all 0.5s ease;
+}
+
+.envelope-front {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background-color: #f9f5ef;
+    z-index: 2;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.address-window {
+    width: 80%;
+    padding: 15px;
+    background: white;
+    border: 1px solid #e0d8c8;
+    text-align: center;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+}
+
+.address-label {
+    font-family: 'Cormorant Garamond', serif;
+    color: #555;
+    font-size: 1.1rem;
+}
+
+.envelope-seal {
+    position: absolute;
+    bottom: -20px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 10;
+    cursor: pointer;
+}
+
+.wax-seal {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #a52a2a, #8b0000);
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Great Vibes', cursive;
+    font-size: 20px;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
+}
+
+.envelope-letter {
+    position: absolute;
+    top: 100%;
+    left: 5%;
+    width: 90%;
+    background: white;
+    padding: 20px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    z-index: 1;
+    text-align: center;
+    transition: transform 0.8s ease;
+}
+
+.letter-content {
+    opacity: 0;
+    transition: opacity 0.5s ease 0.3s;
+}
+
+/* Simple opening animation */
+.envelope-opened .envelope-letter {
+    transform: translateY(-100%);
+}
+
+.envelope-opened .letter-content {
+    opacity: 1;
+}
+
+.envelope-opened .wax-seal {
+    transform: scale(0.8);
+    opacity: 0.6;
+}
+
+/* Simple button styling */
+.invitation-button {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 10px 25px;
+    background: #8b0000;
+    color: white;
+    text-decoration: none;
+    border-radius: 3px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 14px;
+    opacity: 0;
+    transform: translateY(10px);
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.invitation-button.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.invitation-button:hover {
+    background: #a52a2a;
+}
+
+/* Simple instructions */
+.envelope-instructions {
+    margin-top: 10px;
+    text-align: center;
+    color: #777;
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+}
+
+.envelope-instructions.show {
+    opacity: 1;
+}
+
+/* Container fade out */
+.envelope-container.envelope-complete {
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.6s ease, visibility 0s linear 0.6s;
+}
+
+/* Remove all floating decoration elements */
+.envelope-bg-elements,
+.floating-element,
+.flower-1,
+.flower-2,
+.leaf-1,
+.leaf-2,
+.sparkle-1,
+.sparkle-2 {
+    display: none;
+}
+
+/* Base and existing styles */
+/* ...existing code... */
+
+/* Realistic Wedding Envelope Styling */
+.envelope-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, #f9f7f3 0%, #f2efe9 100%);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+    overflow: hidden;
+    transition: all 0.8s ease;
+}
+
+.realistic-envelope {
+    position: relative;
+    width: 400px;
+    height: 280px;
+    perspective: 1500px;
+    margin-bottom: 60px;
+    cursor: pointer;
+    transition: transform 0.3s ease, opacity 0.6s ease;
+    z-index: 10;
+}
+
+.realistic-envelope:hover {
+    transform: scale(1.02);
+}
+
+.envelope-front {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background-color: #f5f0e8;
+    border-radius: 5px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+    overflow: hidden;
+    z-index: 2;
+    transform-style: preserve-3d;
+    transition: transform 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.envelope-design {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('../images/envelope-texture.jpg');
+    background-size: cover;
+    opacity: 0.07;
+}
+
+.address-window {
+    position: absolute;
+    top: 90px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 70%;
+    height: 70px;
+    background-color: rgba(255, 255, 255, 0.9);
+    border: 1px dashed #D4AF37;
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+
+.address-label {
+    padding: 10px;
+    text-align: center;
+}
+
+.envelope-stamp {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    width: 60px;
+    height: 70px;
+    background-color: rgba(255, 255, 255, 0.8);
+    border: 1px solid rgba(212, 175, 55, 0.3);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transform: rotate(5deg);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+}
+
+.stamp-img {
+    width: 80%;
+    height: auto;
+    opacity: 0.85;
+}
+
+.envelope-seal {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 3;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    /* Make the click area larger */
+    padding: 10px;
+    /* Move it up slightly to ensure it's not hidden */
+    margin-bottom: 5px;
+}
+
+.wax-seal {
+    width: 60px;
+    height: 60px;
+    background: linear-gradient(135deg, #cc3333, #8b2a2a);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: rgba(255, 255, 255, 0.9);
+    font-family: 'Great Vibes', cursive;
+    font-size: 24px;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    transition: all 0.5s ease;
+    transform-style: preserve-3d;
+    z-index: 200;  /* Increased z-index to ensure clickability */
+}
+
+.wax-seal-inner {
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+    z-index: 201;  /* Even higher z-index */
+    pointer-events: auto;
+    cursor: pointer;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Envelope opening animation */
+.envelope-opened .envelope-front {
+    transform: rotateX(10deg);
+    box-shadow: 0 30px 50px rgba(0, 0, 0, 0.2);
+}
+
+.envelope-opened .envelope-letter {
+    height: 350px;
+    transform: translateY(30px);
+    z-index: 3;
+}
+
+.envelope-opened .letter-content {
+    opacity: 1;
+}
+
+.envelope-opened .wax-seal {
+    transform: scale(0.7) translateY(-30px);
+    opacity: 0.5;
+}
+
+.envelope-complete {
+    opacity: 0;
+    visibility: hidden;
+}
+
+.envelope-instructions {
+    position: absolute;
+    bottom: 20px;
+    text-align: center;
+    color: rgba(0, 0, 0, 0.4);
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    opacity: 0;
+    transform: translateY(10px);
+    transition: all 0.5s ease 1s;
+}
+
+.show-instructions .envelope-instructions {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Add these styles to enable the envelope opening animation */
+
+.envelope-seal, .wax-seal, .wax-seal-inner {
+    cursor: pointer !important;
+    position: relative;
+    z-index: 100;
+}
+
+.wax-seal {
+    transition: all 0.4s ease;
+}
+
+.wax-seal.opened {
+    transform: scale(0.8) translateY(-20px);
+    opacity: 0.7;
+}
+
+.envelope-opened .envelope-front {
+    transform: rotateX(7deg);
+    box-shadow: 0 30px 50px rgba(0, 0, 0, 0.2);
+    transition: all 0.8s ease;
+}
+
+.envelope-opened .envelope-letter {
+    height: 350px !important;
+    transform: translateY(30px);
+    z-index: 10;
+    transition: all 1.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.envelope-opened .letter-content {
+    opacity: 1 !important;
+    transition: opacity 1s ease 0.5s;
+}
+
+/* Invitation button animation */
+.invitation-button {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 0.5s ease;
+    position: relative;
+    z-index: 300;
+}
+
+.invitation-button.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Letter content initial state */
+.letter-content {
+    opacity: 0;
+    transition: opacity 1s ease;
+}
+
+/* Envelope letter styles */
+.envelope-letter {
+    position: absolute;
+    width: 90%;
+    height: 0;  /* Initially hidden, will be expanded when opened */
+    top: 20px;
+    left: 5%;
+    background: white;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    z-index: 1;
+    overflow: hidden;
+    transform-origin: top center;
+    transition: all 1s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+/* Envelope instructions */
+.envelope-instructions {
+    opacity: 0;
+    transform: translateY(10px);
+    transition: all 0.5s ease;
+}
+
+.envelope-instructions.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Debug helpers - uncomment if needed */
+/*.envelope-seal {
+    outline: 2px solid red;
+}
+.wax-seal {
+    outline: 2px solid blue;
+}
+.wax-seal-inner {
+    outline: 2px solid green;
+}*/
+
+/* Wax seal animation when opened */
+.wax-seal.opened {
+    transform: scale(0.8) translateY(-20px);
+    opacity: 0.7;
+}
+
+/* Container fade out */
+.envelope-container.envelope-complete {
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.6s ease, visibility 0s linear 0.6s;
+}
+
+/* ...existing code... */
