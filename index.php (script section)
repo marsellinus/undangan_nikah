@@ -1,0 +1,74 @@
+// Replace the existing envelope animation code with this:
+document.addEventListener('DOMContentLoaded', function() {
+    const envelopeContainer = document.getElementById('envelope-container');
+    const realisticEnvelope = document.getElementById('realistic-envelope');
+    const envelopeSeal = document.getElementById('envelope-seal');
+    const envelopeLetter = document.getElementById('envelope-letter');
+    const openInvitationBtn = document.getElementById('open-invitation');
+    const musicButton = document.getElementById('music-toggle');
+    
+    if (envelopeContainer && realisticEnvelope) {
+        // Show instructions after a delay
+        setTimeout(() => {
+            envelopeContainer.classList.add('show-instructions');
+        }, 1500);
+        
+        // Function to play opening sound effect
+        function playOpenSound() {
+            const openSound = new Audio('assets/audio/envelope-open.mp3');
+            openSound.volume = 0.4;
+            openSound.play();
+        }
+        
+        // Fix: Make the wax seal clickable
+        // Instead of adding click event to the envelope-seal container,
+        // add it directly to the wax-seal and its inner elements
+        const waxSeal = document.querySelector('.wax-seal');
+        const waxSealInner = document.querySelector('.wax-seal-inner');
+        
+        // Make both elements clickable
+        if (waxSeal) {
+            waxSeal.addEventListener('click', openEnvelope);
+        }
+        
+        if (waxSealInner) {
+            waxSealInner.addEventListener('click', openEnvelope);
+        }
+        
+        // Also keep the original event listener as a fallback
+        if (envelopeSeal) {
+            envelopeSeal.addEventListener('click', openEnvelope);
+        }
+        
+        // Centralized function for opening the envelope
+        function openEnvelope(e) {
+            e.stopPropagation(); // Prevent event bubbling
+            playOpenSound();
+            realisticEnvelope.classList.add('envelope-opened');
+            
+            // Reveal music button
+            setTimeout(() => {
+                if (musicButton) {
+                    musicButton.classList.remove('hidden');
+                }
+            }, 1000);
+        }
+        
+        // Hover effect for the wax seal
+        envelopeSeal.addEventListener('mouseover', function() {
+            this.querySelector('.wax-seal').classList.add('seal-hover');
+        });
+        
+        envelopeSeal.addEventListener('mouseout', function() {
+            this.querySelector('.wax-seal').classList.remove('seal-hover');
+        });
+        
+        // Open invitation button leads to the main page
+        if (openInvitationBtn) {
+            openInvitationBtn.addEventListener('click', function(e) {
+                // Let the link redirect normally
+                envelopeContainer.classList.add('envelope-complete');
+            });
+        }
+    }
+});
